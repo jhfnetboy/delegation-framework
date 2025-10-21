@@ -1,3 +1,16 @@
+# AAStar Test
+Yes, we want to test EOA to get a simple delegation contract.
+MetaMask provide a audited version, test and make it lighter.
+
+## Docs you should read
+https://support.metamask.io/configure/accounts/what-is-a-smart-account
+https://docs.metamask.io/delegation-toolkit
+https://support.metamask.io/configure/accounts/switch-to-or-revert-from-a-smart-account/
+https://sepolia.etherscan.io/address/0x63c0c19a282a1b52b07dd5a65b58948a07dae32b#code
+
+
+
+
 # Delegation Framework
 
 > [!WARNING]
