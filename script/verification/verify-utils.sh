@@ -9,6 +9,7 @@
 CHAIN_IDS=(
   1          # ethereum
   11155111   # sepolia
+  560048     # hoodi
   59144      # linea
   59141      # linea-sepolia
   8453       # base
@@ -34,6 +35,8 @@ CHAIN_IDS=(
   763373     # ink-sepolia
   1329       # sei
   1328       # sei-testnet
+  146        # sonic
+  14601      # sonic-testnet
 )
 
 ##########################################
@@ -50,6 +53,7 @@ get_chain_config() {
     case "$chain_id" in
         1)        config=("$ETHERSCAN_API_KEY" "etherscan" "$MAINNET_RPC_URL" "https://etherscan.io/") ;; # ethereum
         11155111) config=("$ETHERSCAN_API_KEY" "etherscan" "$SEPOLIA_RPC_URL" "https://sepolia.etherscan.io/") ;;  # sepolia
+        560048)   config=("$ETHERSCAN_API_KEY" "etherscan" "$HOODI_RPC_URL" "https://hoodi.etherscan.io/") ;; # hoodi
         59144)    config=("$ETHERSCAN_API_KEY" "etherscan" "$LINEA_RPC_URL" "https://lineascan.build/") ;; # linea
         59141)    config=("$ETHERSCAN_API_KEY" "etherscan" "$LINEA_SEPOLIA_RPC_URL" "https://sepolia.lineascan.build/") ;; # linea-sepolia
         8453)     config=("$ETHERSCAN_API_KEY" "etherscan" "$BASE_RPC_URL" "https://basescan.org/")  ;; # base
@@ -75,6 +79,8 @@ get_chain_config() {
         763373)   config=("key" "blockscout" "$INK_SEPOLIA_RPC_URL" "https://explorer-sepolia.inkonchain.com/api") ;; # ink-sepolia
         1329)     config=("key" "custom" "$SEI_RPC_URL" "https://seitrace.com/pacific-1/api") ;; # sei
         1328)     config=("key" "custom" "$SEI_TESTNET_RPC_URL" "https://seitrace.com/atlantic-2/api") ;; # sei-testnet
+        146)      config=("$ETHERSCAN_API_KEY" "etherscan" "$SONIC_RPC_URL" "https://api.etherscan.io/v2/api?chainid=146") ;; # sonic
+        14601)    config=("$ETHERSCAN_API_KEY" "etherscan" "$SONIC_TESTNET_RPC_URL" "https://api.etherscan.io/v2/api?chainid=14601") ;; # sonic-testnet
         *)
             echo "Unknown chain ID: $chain_id" >&2
             return 1
